@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>微博发布效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .weibo {
+            width: 600px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            padding: 10px;
+        }
+        
+        .weibo-text {
+            width: 590px;
+            height: 140px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            resize: none;
+        }
+        
+        .weibo-text:focus {
+            border-color: #f60;
+        }
+        
+        .weibo-btn {
+            width: 80px;
+            height: 30px;
+            background-color: #f90;
+            color: #fff;
+            border: 0 none;
+            margin-top: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            outline: 0 none;
+        }
+        
+        .weibo-list {
+            padding-top: 10px;
+        }
+        
+        .weibo-list li {
+            font-size: 14px;
+            line-height: 30px;
+            border-bottom: 1px dotted #ccc;
+            overflow: hidden;
+        }
+        
+        .weibo-list li p {
+            float: left;
+        }
+        
+        .weibo-list li span {
+            float: right;
+            cursor: pointer;
+        }
+        
+        .weibo-list li input {
+            height: 24px;
+            line-height: 24px;
+            width: 300px;
+            font-size: 14px;
+            border: 0 none;
+        }
+        
+        .time {
+            margin-right: 10px;
+            font-style: normal;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weibo">
+        <textarea class="weibo-text"></textarea>
+        <input class="weibo-btn" value="发布" type="button">
+        <ul class="weibo-list">
+        </ul>
+    </div>
+</body>
+<script>
+    /*
+                    1点击发布可以生成一条新的li
+                     2点击删除也可以删除某条li
+                     3刷新或者重新打开还是保留原来的数据
+                       
+                     实现思路：在一个地方把新增和删除的数据保存起来；
+                     当页面一开始加载的时候读取这些数据动态生成li里面的内容；
+                     当输入数据，新增的数据会更新刀存储数据里面；
+                     点击删除，对应的数据也会从存储的地方移除。
+                      */
+
+    let btn = document.querySelector('.weibo-btn');
+    console.log(btn);
+    let text = document.querySelector('weibo-text');
+    let ul = document.querySelector('weibo-list');
+    //定义一个数组，使用数组储存新增的数据
+    var datas = [];
+    btn.onclick = function() {
+        //获取文本域的内容
+        let content = text.value;
+        if (content.trim().length === 0) {
+            alert('请输入文字')
+            return;
+        }
+        //封装生成时间的函数
+        let time = kits,
+            formaDate();
+    }
+</script>
+
+</html>
